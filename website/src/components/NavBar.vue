@@ -2,8 +2,8 @@
    <div class="bar" :class="navBarPosition" :style="navBarStyles">
       <div class="grids">
          <i></i>
-         <i v-for="(item, index) in navBArCategories" :key="index" :class="item.active">
-            <a :href="item.href" :class="item.style">{{ item.name }}</a>
+         <i v-for="(item, index) in navBArCategories" :key="index">
+            <a :href="item.href" :class="[item.style, item.active]">{{ item.name }}</a>
          </i>
          <i></i>
       </div>
@@ -47,8 +47,9 @@ export default {
       },
       handleScrollOpacity() {
          const scrollPos = window.scrollY
-         const maxScroll = 1040
+         const maxScroll = 1026.5
          const maxBlur = 2
+
 
          this.opacityVariables.opacity = (scrollPos < maxScroll)
             ? 0.60 * (scrollPos / maxScroll)
@@ -58,8 +59,6 @@ export default {
             : 0
 
          this.navBarStyles = this.setStylesScroll()
-
-         console.log(this.navBarStyles)
       },
       handleScrollNavPosition() {
          const scrollPosition2 = window.scrollY
@@ -94,19 +93,20 @@ export default {
 
 
 i {
-   padding: 20px;
+   padding: 0.5px;
 }
 
 .bar {
    opacity: 0.2;
    display: grid;
-   height: 60px;
+   height: 50px;
    width: 100%;
    background-color: var(--nord0);
+   z-index: 1000;
 }
 
 .is-active {
-   border-top: 2px solid var(--nord5);
+   border-top: 2px solid var(--nord4);
 }
 
 .grids {
@@ -121,11 +121,11 @@ i {
    color: var(--nord6);
    font-weight: 300;
    text-decoration: none;
-   padding: 20px;
+   padding: 10px;
 }
 
 .top {
    position: fixed;
-   top: 0px;
+   top: 1px;
 }
 </style>

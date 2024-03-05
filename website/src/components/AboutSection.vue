@@ -1,27 +1,66 @@
 <template>
-   <div class="header-whitespace">
+   <div id="about" class="header-whitespace">
 
    </div>
    <div class="header-logo">
       <i></i>
       <i>
-         <LogoVue></LogoVue>
+         <LogoVue :style="styleSetter"></LogoVue>
       </i>
       <i></i>
    </div>
+   <HeaderVue text="About"></HeaderVue>
    <div class="text-section">
       <i></i>
-      <i></i>
+      <i>
+         <div class="text-sections paragraph">
+            Hi there! My name is Gabriel López. Based on Latin America, particularly in Honduras, I'm a recent
+            electrical engineering and physics graduate from the <strong> Universidad Nacional Autónoma de
+               Honduras</strong>, currently working on research that explores the frontier between physics and
+            computing. Due to this fact alone, I can safely attest that I'm passionate about exploring new
+            technologies
+            and science related topics.
+         </div><br>
+         <div class="text-sections paragraph">
+            Aside from my academic background, I'm quite the cinephile, and I've been this way since I entered
+            college due to film recommendations by some of my colleages. My favorite directors are: <em>
+               Nicholas WindingRefn, Bong
+               Joon-ho, Park Chan-wook and Ingmar Bergman.</em>
+            I am also fond of music and literature, particularly the latter, with philosophy being one of my favorite
+            genres, although I must admit that most of their ideas pose a challenge to understand at times.
+         </div>
+      </i>
+      <i>
+         <div class="icons">
+            <i>
+               <h4 class="icon-item">
+                  <i class="bi bi-github"></i>
+               </h4>
+            </i>
+            <i>
+               <h4 class="icon-item">
+                  <i class="bi icon-item bi-linkedin"></i>
+               </h4>
+            </i>
+            <i>
+               <h4 class="icon-item">
+                  <i class="bi icon-item bi-envelope"></i>
+               </h4>
+            </i>
+         </div>
+      </i>
       <i></i>
    </div>
 </template>
 
 <script>
 import LogoVue from './Logo.vue'
+import HeaderVue from './HeadersComp.vue'
 
 export default {
    components: {
-      LogoVue
+      LogoVue,
+      HeaderVue
    },
    data() {
       return {
@@ -39,7 +78,7 @@ export default {
       handleScrollRotation() {
          const scroller = window.scrollY
          const weight = 5
-         this.angles.rotate = (scroller/weight) 
+         this.angles.rotate = (scroller / weight)
 
          this.styleSetter = this.setRotation()
       },
@@ -69,11 +108,6 @@ i {
    width: inherit;
 }
 
-* {
-   height: 1200px;
-   width: 100%;
-   background-color: #FFF;
-}
 
 .logo {
    height: 100px;
@@ -86,7 +120,8 @@ i {
    grid-template-columns: 1fr 1fr 1fr;
    grid-template-rows: 1fr;
    align-items: center;
-   margin-top: 100px;
+   margin-top: 25px;
+   margin-bottom: 25px;
 }
 
 .logo-rotation {
@@ -100,10 +135,34 @@ i {
 
 
 .text-section {
+   margin-top: 15px;
+   margin-bottom: 50px;
    display: grid;
-   height: 500px;
-   padding: 50px;
-   grid-template-columns: 2fr 1fr 2fr;
+   grid-template-columns: 9fr 19fr 2fr 9fr;
+   column-gap: 30px;
+   grid-template-rows: 50vh;
    align-items: center;
 }
+
+.icons {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+   row-gap: 40px;
+   text-align: center;
+   transition: all 500ms;
+   align-items: center;
+}
+
+
+.icon-item:hover {
+   transform: scale(1.25);
+   transition: all 500ms;
+}
+
+.paragraph:hover {
+   transform: scale(1.025);
+   transition: all 500ms;
+}
+
 </style>

@@ -1,7 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
 
 @import "./nord.css";
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hepta+Slab:wght@1..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 html {
   scroll-behavior: smooth;
@@ -20,4 +21,18 @@ html {
   font-weight: 300;
   font-style: normal;
   margin-bottom: 20px;
+}
+
+.header-titles {
+  font-family: "Hepta Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.text-sections {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
 }

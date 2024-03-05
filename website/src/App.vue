@@ -2,8 +2,6 @@
   <Front></Front>
   <NavBarVue></NavBarVue>
   <AboutSectionVue></AboutSectionVue>
-
-  <div style="height: 7000px; width: 100%;"></div>
 </template>
 
 <script>
