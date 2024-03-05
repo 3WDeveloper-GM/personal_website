@@ -6,8 +6,8 @@
             <i></i>
             <i></i>
             <i>
-               <h1 class="titles title-options">
-                  Hi There
+               <h1 class="titles title-options" ref="greetings">
+
                </h1>
             </i>
          </div>
@@ -27,9 +27,13 @@
 </template>
 
 <script>
+
+import { removeTyping, typing } from './utils/utils'
+
 export default {
    mounted() {
       this.toggleClassnames()
+      this.CombinedTyping(this.typingText, this.unTyping)
       window.addEventListener('scroll', this.handleScroll)
    },
    data() {
@@ -67,6 +71,28 @@ export default {
          setTimeout(() => {
             this.classnames = ["container-basic"]
          }, 1500)
+      },
+      typingText(resolve) {
+         let element = this.$refs.greetings
+         let typingSpeed = 200
+         let message = "Hello, there"
+         let iterations = message.length
+
+         setTimeout(() => typing(element, message, typingSpeed, iterations, resolve), 1500)
+      },
+      unTyping() {
+         let element = this.$refs.greetings
+         let typingSpeed = 250
+         let character = ","
+
+         removeTyping(element, character, typingSpeed)
+      },
+      CombinedTyping(callback1, callback2) {
+         return new Promise((resolve, reject) => {
+            callback1(resolve)
+         }).then(() => {
+            callback2()
+         })
       }
    },
 }
