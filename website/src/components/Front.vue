@@ -18,7 +18,9 @@
             <i></i>
             <i>
                <h5 class="subtitle-options subtitles">
-                  <span class="blinking-cursor"> more </span> <span></span>
+                  <a href="#about">
+                     <span class="blinking-cursor"> more </span> <br> <span> <i class="bi bi-chevron-down blinking-cursor"></i>  </span>
+                  </a>
                </h5>
             </i>
             <i></i>
@@ -109,7 +111,10 @@ export default {
    margin: 0;
 
 }
-
+a {
+   color: inherit;
+   text-decoration: none;
+}
 .container-basic {
    display: grid;
    grid-template-columns: 1fr;

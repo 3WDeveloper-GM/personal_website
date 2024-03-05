@@ -34,17 +34,17 @@
          <div class="icons">
             <i>
                <h4 class="icon-item">
-                  <i class="bi bi-github"></i>
+                  <a href="https://github.com/3WDeveloper-GM"> <i class="bi bi-github"></i></a>
                </h4>
             </i>
             <i>
                <h4 class="icon-item">
-                  <i class="bi icon-item bi-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/3wgm/"><i class="bi icon-item bi-linkedin"></i></a>
                </h4>
             </i>
             <i>
                <h4 class="icon-item">
-                  <i class="bi icon-item bi-envelope"></i>
+                  <a href="mailto:glopezmad@gmail.com"> <i class="bi icon-item bi-envelope"></i></a>
                </h4>
             </i>
          </div>
@@ -94,7 +94,10 @@ export default {
 <style lang="scss" scoped>
 @import url("../assets/base.css");
 
-
+a {
+   color: inherit;
+   text-decoration: none;
+}
 
 
 svg {
@@ -138,7 +141,7 @@ i {
    margin-top: 15px;
    margin-bottom: 50px;
    display: grid;
-   grid-template-columns: 9fr 19fr 2fr 9fr;
+   grid-template-columns: 9fr 15fr 2fr 9fr;
    column-gap: 30px;
    grid-template-rows: 50vh;
    align-items: center;
@@ -157,12 +160,13 @@ i {
 
 .icon-item:hover {
    transform: scale(1.25);
-   transition: all 500ms;
+   transition: all 500ms ease-in-out;
 }
+
+
 
 .paragraph:hover {
    transform: scale(1.025);
-   transition: all 500ms;
+   transition: all 500ms ease-in-out;
 }
-
 </style>

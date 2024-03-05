@@ -14,10 +14,7 @@
 export default {
    data() {
       return {
-         navBarPosition: {
-            position: "absolute",
-            top: "auto"
-         },
+         navBarPosition:[" relative "],
          navBArCategories: [
             { name: "Home", href: "#", style: ["h5", "titles", "title-options"], active: "" },
             { name: "About", href: "#about", style: ["h5", "titles", "title-options"], active: "" },
@@ -65,7 +62,9 @@ export default {
          const maxScroll = 1031
          this.navBarPosition = (scrollPosition2 > maxScroll)
             ? ["top"]
-            : [""]
+            : ["relative"]
+
+         
       },
       handleScrollStyles() {
          const breakpointNumber = 5
@@ -128,4 +127,10 @@ i {
    position: fixed;
    top: 1px;
 }
+
+.relative {
+   position: relative;
+   top: auto
+}
+
 </style>
