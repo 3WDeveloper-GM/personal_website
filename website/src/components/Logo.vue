@@ -1,4 +1,6 @@
-<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<template>
+   <div>
+      <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z" fill="#2E3440"/>
 <path d="M150 0L279.904 225H20.0962L150 0Z" fill="#3B4252"/>
 <path d="M150 225L214.952 112.5H85.0481L150 225Z" fill="#434C5E"/>
@@ -397,3 +399,25 @@
 <path d="M153.112 149.438L153.128 149.465H153.096L153.112 149.438Z" fill="#3B4252"/>
 <path d="M153.112 149.465L153.12 149.451H153.104L153.112 149.465Z" fill="#434C5E"/>
 </svg>
+   </div>
+</template>
+
+<script>
+export default {
+   setup () {
+      
+
+      return {}
+   }
+}
+</script>
+
+<style lang="scss" scoped>
+
+* {
+   height:300px;
+   width:300px;
+   text-align: center;
+}
+
+</style>

@@ -6,8 +6,9 @@
             <i></i>
             <i></i>
             <i>
-               <h1 class="titles title-options" ref="greetings">
-
+               <h1 class="titles title-options">
+                  <span ref="greetings"></span>
+                  <span class="blinking-cursor">|</span>
                </h1>
             </i>
          </div>
@@ -17,7 +18,7 @@
             <i></i>
             <i>
                <h5 class="subtitle-options subtitles">
-                  more
+                  <span class="blinking-cursor"> more </span> <span></span>
                </h5>
             </i>
             <i></i>
@@ -32,8 +33,9 @@ import { removeTyping, typing } from './utils/utils'
 
 export default {
    mounted() {
+
       this.toggleClassnames()
-      this.CombinedTyping(this.typingText, this.unTyping)
+      setTimeout(this.CombinedTyping,2000)
       window.addEventListener('scroll', this.handleScroll)
    },
    data() {
@@ -51,9 +53,9 @@ export default {
       handleScroll() {
          const scrollPosition = window.scrollY
          const maxScroll = 800
-         const maxBlur = 20
+         const maxBlur = 60
          this.initialBlurValues.opacity = (scrollPosition < maxScroll)
-            ? 1 - scrollPosition / maxScroll
+            ? (1 - scrollPosition / maxScroll)
             : 0
          this.initialBlurValues.blur = (scrollPosition > maxScroll)
             ? maxBlur
@@ -70,29 +72,31 @@ export default {
       toggleClassnames() {
          setTimeout(() => {
             this.classnames = ["container-basic"]
-         }, 1500)
+         }, 2000)
       },
-      typingText(resolve) {
+      typingText(message, typingSpeed, resolve) {
          let element = this.$refs.greetings
-         let typingSpeed = 200
-         let message = "Hello, there"
          let iterations = message.length
 
          setTimeout(() => typing(element, message, typingSpeed, iterations, resolve), 1500)
       },
-      unTyping() {
+      unTyping(message, typingSpeed) {
          let element = this.$refs.greetings
-         let typingSpeed = 250
-         let character = ","
-
-         removeTyping(element, character, typingSpeed)
+         removeTyping(element, message, typingSpeed)
       },
-      CombinedTyping(callback1, callback2) {
-         return new Promise((resolve, reject) => {
-            callback1(resolve)
-         }).then(() => {
-            callback2()
-         })
+      CombinedTyping() {
+         let element = this.$refs.greetings
+         let message = "Hello, I'm Gabriel"
+         let timeStep = 200
+         let iterations = message.length
+         let message2 = "Hello"
+         let message3 = " There!"
+
+         const started = typing(element, message, timeStep, iterations)
+
+         started.
+            then(() => removeTyping(element, message2, timeStep)).
+            then(() => typing(element, message3, timeStep, message3.length))
       }
    },
 }
@@ -165,5 +169,27 @@ export default {
       opacity: 1;
       filter: blur(0px);
    }
+}
+
+.blinking-cursor {
+   animation: blink;
+   animation-delay: 1500ms;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: infinite;
+   animation-fill-mode: forwards;
+   animation-duration: 3s;
+}
+
+@keyframes blink {
+
+   0%,
+   100% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0;
+   }
+
 }
 </style>

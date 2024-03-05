@@ -1,24 +1,29 @@
 <template>
   <Front></Front>
-  <div style="height: 4000px; width: 100%;"></div>
+  <NavBarVue></NavBarVue>
+  <AboutSectionVue></AboutSectionVue>
+
+  <div style="height: 7000px; width: 100%;"></div>
 </template>
 
 <script>
 
+import AboutSectionVue from './components/AboutSection.vue'
 import Front from "./components/Front.vue"
+import NavBarVue from './components/NavBar.vue'
 
 export default {
-  setup () {
-    
+  setup() {
+
 
     return {}
   },
   components: {
-    Front
+    Front,
+    NavBarVue,
+    AboutSectionVue
   }
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
