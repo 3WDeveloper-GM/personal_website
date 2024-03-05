@@ -1,5 +1,6 @@
 <template>
   <Front></Front>
+  <div style="height: 4000px; width: 100%;"></div>
 </template>
 
 <script>
