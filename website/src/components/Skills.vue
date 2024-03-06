@@ -39,12 +39,14 @@
                </div>
             </i>
             <i>
-              <component v-for="item in componentList" :key="item.name" :is="item.component" v-show="isKeyActive(item.isActive)"></component>
+               <Transition name="fade" mode="out-in">
+              <!--- <component v-for="item in componentList" :key="item.name" :is="item.component" v-show="isKeyActive(item.isActive)"></component> --->
+              <component :is="currentComponent"></component>
+              </Transition>
             </i>
          </div>
       </i>
    </div>
-   <div style="height: 300px; width: 100%;"></div>
 </template>
 
 <script>
@@ -55,7 +57,7 @@ import ProgLangs from './skillssvg/progLangs.vue'
 import webdevVue from './skillssvg/webdev.vue'
 import MiscelVue from './skillssvg/miscell.vue'
 
-import { keySwap } from './utils/utils'
+//import { keySwap } from './utils/utils'
 
 
 export default {
@@ -83,7 +85,8 @@ export default {
             {name: "webdev", component: "webdevVue", isActive:2},
             {name: "languages", component: "langsVue", isActive:3},
             {name: "languages", component: "MiscelVue", isActive:4}
-         ]
+         ],
+         currentComponent: "ProgLangs"
       }
    },
    methods: {
@@ -99,8 +102,8 @@ export default {
          return key === 0
       },
       keySwapper(index) {
-         console.log(this.componentList)
-         keySwap(this.componentList,index)
+         //keySwap(this.componentList,index)
+         this.currentComponent = this.componentList[index].component
       }
    }
 }
@@ -111,6 +114,16 @@ export default {
 
 * {
    background-color: var(--nord0);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .header-whitespace {

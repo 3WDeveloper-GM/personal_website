@@ -37,7 +37,6 @@ export default {
    methods: {
       addDelayTimes() {
          let element = this.$refs.header.getElementsByClassName("content")
-         console.log(element)
          let offset = 500
          let delayStep = 500
          let elementNumber = element.length

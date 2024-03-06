@@ -52,7 +52,6 @@ export default {
    methods: {
       addDelayTimes() {
          let element = this.$refs.header.getElementsByClassName("content")
-         console.log(element)
          let offset = 500
          let delayStep = 500
          let elementNumber = element.length
@@ -66,6 +65,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.header {
+   height: 520;
+   width: 985;
+}
+
 .fades-out {
    opacity: 0;
    animation-name: fadein;
@@ -89,18 +94,18 @@ export default {
 
 .slider {
    opacity: 0;
-   width: 0;
    animation-name: slide;
-   animation-duration: 3s;
+   animation-duration: 4s;
    animation-delay: 5s;
    animation-fill-mode: forwards;
    animation-timing-function: ease-in-out;
+   max-width: 100%;
 }
 
 @keyframes slide {
    from {
       opacity: 0;
-      width: 0;
+      width: 0%;
    }
 
    to {
