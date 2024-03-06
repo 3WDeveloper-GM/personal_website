@@ -22,7 +22,7 @@
             <i>
                <div class="skills-list">
                   <i v-for="(item, index) in listItems" :key="index" @mouseover="selectItem(index)"
-                     @mouseleave="changeItem(index)">
+                     @mouseleave="changeItem(index)" @click="keySwapper(index)">
                      <h5 class="logo-section skill-item">{{ item.name }}</h5>
                   </i>
                </div>
@@ -39,7 +39,7 @@
                </div>
             </i>
             <i>
-              <ProgLangs></ProgLangs>
+              <component v-for="item in componentList" :key="item.name" :is="item.component" v-show="isKeyActive(item.isActive)"></component>
             </i>
          </div>
       </i>
@@ -49,13 +49,17 @@
 
 <script>
 import HeaderVue from './HeadersComp.vue'
+import langsVue from './skillssvg/languages.vue'
 import ProgLangs from './skillssvg/progLangs.vue'
-
+import webdevVue from './skillssvg/webdev.vue'
+import { keySwap } from './utils/utils'
 
 export default {
    components: {
       HeaderVue,
       ProgLangs,
+      langsVue,
+      webdevVue,
    },
    data() {
       return {
@@ -66,7 +70,12 @@ export default {
             { name: "Languages", icon: "bi bi-translate" },
             { name: "Miscellaneous", icon: "bi bi-kanban-fill" }
          ],
-         className: ""
+         className: "",
+         componentList: [
+            {name: "programming", component: "ProgLangs",isActive:1},
+            {name: "languages", component: "langsVue", isActive:3},
+            {name: "webdev", component: "webdevVue", isActive:2}
+         ]
       }
    },
    methods: {
@@ -77,6 +86,13 @@ export default {
       changeItem(index) {
          this.className = this.listItems[index].icon.split(" ")
          this.className.push("fade-out")
+      },
+      isKeyActive(key) {
+         return key === 0
+      },
+      keySwapper(index) {
+         console.log(this.componentList)
+         keySwap(this.componentList,index)
       }
    }
 }
@@ -104,7 +120,7 @@ export default {
 
 .skills-visualization-container {
    display: grid;
-   grid-template-columns: 9fr 21fr 9fr;
+   grid-template-columns: 9fr 36fr 9fr;
    grid-template-rows: 520px;
    align-items: center;
    text-align: center;
@@ -114,7 +130,7 @@ export default {
 .skills-wrapper-container {
    display: grid;
    grid-template-rows: 520px;
-   grid-template-columns: 10fr 10fr 36fr;
+   grid-template-columns: 9fr 9fr 36fr;
    column-gap: 30px;
    align-items: center;
 }

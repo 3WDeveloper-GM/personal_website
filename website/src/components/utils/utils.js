@@ -55,4 +55,28 @@ export function removeTyping(element, phrase, timeStep) {
 }
 
 
+export function getDelayTimes(blockAmount, delayStep, offset) {
+   let delaysArray = new Array(blockAmount)
+   for (let index = 0; index < blockAmount; index++) {
+      delaysArray[index] = (index % 3) * delayStep + offset
+   }
+   return delaysArray
+}
 
+export function setDelayTimes(element, delayStep, offset) {
+   let childNodesAmount = element.length
+
+   let delaysArray = getDelayTimes(childNodesAmount, delayStep, offset)
+   for (let index = 0; index < childNodesAmount; index++) {
+      element[index].style.animationDelay = `${delaysArray[index]}ms`
+   }
+   let nextOffset = Math.max(...delaysArray)
+   return nextOffset
+}
+
+export function keySwap(keysObject, offset) {
+   let skillsAmount = keysObject.length
+   for (let index = 0; index < skillsAmount; index++) {
+      keysObject[index].isActive = (((index - offset) % skillsAmount) + skillsAmount) % skillsAmount
+   }
+}
