@@ -3,6 +3,7 @@
   <NavBarVue></NavBarVue>
   <AboutSectionVue></AboutSectionVue>
   <SkillsVue></SkillsVue>
+  <Projects></Projects>
 </template>
 
 <script>
@@ -11,7 +12,7 @@ import AboutSectionVue from './components/AboutSection.vue'
 import Front from "./components/Front.vue"
 import NavBarVue from './components/NavBar.vue'
 import SkillsVue from './components/Skills.vue'
-
+import Projects from './components/Projects.vue'
 
 export default {
   setup() {
@@ -23,7 +24,8 @@ export default {
     Front,
     NavBarVue,
     AboutSectionVue,
-    SkillsVue
+    SkillsVue,
+    Projects,
   }
 }
 </script>
