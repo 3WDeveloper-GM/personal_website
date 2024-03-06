@@ -1,3 +1,4 @@
+<template>
 <svg width="985" height="520" viewBox="0 0 985 520" fill="none" xmlns="http://www.w3.org/2000/svg">
    <rect width="985" height="520" fill="#1E1E1E" />
    <g id="Frame 2">
@@ -71,3 +72,73 @@
       </linearGradient>
    </defs>
 </svg>
+</template>
+
+<script>
+
+import { setDelayTimes } from '../utils/utils'
+
+export default {
+   mounted() {
+      this.addDelayTimes()
+   },
+   methods: {
+      addDelayTimes() {
+         let element = this.$refs.header.getElementsByClassName("content")
+         console.log(element)
+         let offset = 500
+         let delayStep = 500
+         let elementNumber = element.length
+         for (let index = 1; index <= elementNumber; index++) {
+            let newOffset = setDelayTimes(element[elementNumber - index].children, delayStep, offset)
+            offset = newOffset
+         }
+      }
+   }
+}
+</script>
+
+<style lang="scss" scoped>
+.fades-out {
+   opacity: 0;
+   animation-name: fadein;
+   animation-duration: 1s;
+   animation-delay: 5s;
+   animation-fill-mode: forwards;
+   animation-timing-function: ease-in-out;
+}
+
+@keyframes fadein {
+   from {
+      opacity: 0;
+      transform: translateY(-50px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
+
+.slider {
+   opacity: 0;
+   width: 0;
+   animation-name: slide;
+   animation-duration: 3s;
+   animation-delay: 5s;
+   animation-fill-mode: forwards;
+   animation-timing-function: ease-in-out;
+}
+
+@keyframes slide {
+   from {
+      opacity: 0;
+      width: 0;
+   }
+
+   to {
+      opacity: 1;
+      width: 100%;
+   }
+}
+</style>

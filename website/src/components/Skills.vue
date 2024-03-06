@@ -53,6 +53,8 @@ import devopsVue from './skillssvg/devops.vue'
 import langsVue from './skillssvg/languages.vue'
 import ProgLangs from './skillssvg/progLangs.vue'
 import webdevVue from './skillssvg/webdev.vue'
+import MiscelVue from './skillssvg/miscell.vue'
+
 import { keySwap } from './utils/utils'
 
 
@@ -63,6 +65,7 @@ export default {
       langsVue,
       webdevVue,
       devopsVue,
+      MiscelVue,
    },
    data() {
       return {
@@ -79,7 +82,7 @@ export default {
             {name: "programming", component: "ProgLangs",isActive:1},
             {name: "webdev", component: "webdevVue", isActive:2},
             {name: "languages", component: "langsVue", isActive:3},
-
+            {name: "languages", component: "MiscelVue", isActive:4}
          ]
       }
    },
