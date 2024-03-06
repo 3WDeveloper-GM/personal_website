@@ -77,7 +77,7 @@ export default {
    methods: {
       handleScrollRotation() {
          const scroller = window.scrollY
-         const weight = 5
+         const weight = 7
          this.angles.rotate = (scroller / weight)
 
          this.styleSetter = this.setRotation()
