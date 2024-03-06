@@ -102,6 +102,7 @@ i {
    width: 100%;
    background-color: var(--nord0);
    z-index: 1000;
+   transition: all 100ms;
 }
 
 .is-active {
@@ -125,7 +126,7 @@ i {
 
 .top {
    position: fixed;
-   top: 1px;
+   top: 0px;
 }
 
 .relative {

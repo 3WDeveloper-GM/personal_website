@@ -3,7 +3,7 @@
       <i></i>
       <i>
          <div>
-            <h2 :id="ids" class="header-titles header-titles-margin" :style="{ textColor: textColor, borderBottomColor: underline, borderBottomStyle: 'solid', borderBottomWidth: '1px'}">
+            <h2 :id="ids" class="header-titles header-titles-margin" :style="{ color: textColor, borderBottomColor: underline, borderBottomStyle: 'solid', borderBottomWidth: '1px'}">
                {{ text  }}
             </h2>
          </div>
