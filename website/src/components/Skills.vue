@@ -62,6 +62,7 @@ export default {
       ProgLangs,
       langsVue,
       webdevVue,
+      devopsVue,
    },
    data() {
       return {
@@ -74,10 +75,11 @@ export default {
          ],
          className: "",
          componentList: [
-            {name: "devops", component: "devopsVue", isActive: 0}
+            {name: "devops", component: "devopsVue", isActive: 0},
             {name: "programming", component: "ProgLangs",isActive:1},
+            {name: "webdev", component: "webdevVue", isActive:2},
             {name: "languages", component: "langsVue", isActive:3},
-            {name: "webdev", component: "webdevVue", isActive:2}
+
          ]
       }
    },

@@ -7,7 +7,7 @@
          <rect class="fades-out" y="80" width="148" height="30" fill="#D8DEE9" />
          <rect class="slider" x="148" y="80" width="651" height="30" fill="url(#paintt_linear_1_2)" />
          <rect class="slider" x="798.917" y="80" width="186.325" height="30" fill="#4C566A" />
-         <text class="fade-in" id="Github" fill="black" xml:space="preserve"
+         <text class="fades-out" id="Github" fill="black" xml:space="preserve"
             style="white-space: pre" font-family="Inter" font-size="12.6875" letter-spacing="0em"><tspan x="53.6853" y="99.6136">Github</tspan></text>
       </g>
    </g>
