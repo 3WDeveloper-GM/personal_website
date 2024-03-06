@@ -49,10 +49,12 @@
 
 <script>
 import HeaderVue from './HeadersComp.vue'
+import devopsVue from './skillssvg/devops.vue'
 import langsVue from './skillssvg/languages.vue'
 import ProgLangs from './skillssvg/progLangs.vue'
 import webdevVue from './skillssvg/webdev.vue'
 import { keySwap } from './utils/utils'
+
 
 export default {
    components: {
@@ -72,6 +74,7 @@ export default {
          ],
          className: "",
          componentList: [
+            {name: "devops", component: "devopsVue", isActive: 0}
             {name: "programming", component: "ProgLangs",isActive:1},
             {name: "languages", component: "langsVue", isActive:3},
             {name: "webdev", component: "webdevVue", isActive:2}
