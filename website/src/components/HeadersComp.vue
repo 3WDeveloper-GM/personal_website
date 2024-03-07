@@ -57,6 +57,7 @@ a {
 }
 
 .header-titles-margin {
-   margin-top: 80px
+   margin-top: 2em;
+   margin-bottom: 2em;
 }
 </style>

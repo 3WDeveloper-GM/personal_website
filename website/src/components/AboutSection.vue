@@ -144,7 +144,7 @@ i {
    display: grid;
    grid-template-columns: 9fr 15fr 2fr 9fr;
    column-gap: 30px;
-   grid-template-rows: 50vh;
+   grid-template-rows: 25rem;
    align-items: center;
 }
 

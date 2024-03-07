@@ -416,7 +416,7 @@ export default {
 
 <style lang="scss" scoped>
 * {
-   height: 300px;
+   height: 14rem;
    text-align: center;
 }
 </style>

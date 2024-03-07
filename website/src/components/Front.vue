@@ -148,6 +148,7 @@ a {
 
 .title-options {
    color: #0e0d0d;
+   font-size: 2em;
 }
 
 .subtitle-options {

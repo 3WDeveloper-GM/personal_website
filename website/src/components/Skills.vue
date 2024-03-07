@@ -127,7 +127,7 @@ export default {
 }
 
 .header-whitespace {
-   height: 150px;
+   height: 4rem;
    width: 100%;
 }
 
@@ -142,7 +142,7 @@ export default {
 .skills-visualization-container {
    display: grid;
    grid-template-columns: 9fr 36fr 9fr;
-   grid-template-rows: 520px;
+   grid-template-rows: 32em;
    align-items: center;
    text-align: center;
 
@@ -150,7 +150,7 @@ export default {
 
 .skills-wrapper-container {
    display: grid;
-   grid-template-rows: 520px;
+   grid-template-rows: 32em;
    grid-template-columns: 9fr 9fr 36fr;
    column-gap: 30px;
    align-items: center;
