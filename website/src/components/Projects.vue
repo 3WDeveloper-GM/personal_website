@@ -35,17 +35,17 @@
                      Stockwell transform to characterize their main properties and generate a tree based classifier
                      for real time sorting of PQEs on the wild.
                   </p>
-                  <button :class="currentBtnClass[0].className" @mouseover="setButtonOutline(0)"
-                     @mouseleave="setButtonOutline(0)">
-                     Github Repo
-                  </button>
+                  <a href="https://github.com/3WDeveloper-GM/Python_Investigation" :class="currentBtnClass[0].className"
+                     @mouseover="setButtonOutline(0)" @mouseleave="setButtonOutline(0)">
+                        Github Repo
+                  </a>
                </i>
             </div>
          </i>
          <i></i>
       </div>
    </div>
-   <div style="height: 1300px; width: 100%;"></div>
+   <div id="projects" class="header-whitespace"> </div>
 </template>
 
 <script>
@@ -223,6 +223,11 @@ export default {
    animation-timing-function: ease-in-out;
    animation-delay: 100ms;
    animation-fill-mode: forwards;
+}
+
+.repo-link {
+   text-decoration: none;
+   color: inherit;
 }
 
 @keyframes btn-onhover {

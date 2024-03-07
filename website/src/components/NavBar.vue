@@ -71,17 +71,15 @@ export default {
          const breakpoints = [993, 2223, 3200, 3800]
          const scrollPosition3 = window.scrollY
 
-         console.log(scrollPosition3)
-
          this.navBArCategories[0].active = (scrollPosition3 <= breakpoints[0])
             ? "is-active"
             : ""
          for (let index = 1; index < breakpointNumber; index++) {
-            this.navBArCategories[index].active = (breakpoints[index -1] <= scrollPosition3 && scrollPosition3 < breakpoints[index])
+            this.navBArCategories[index].active = (breakpoints[index - 1] <= scrollPosition3 && scrollPosition3 < breakpoints[index])
                ? "is-active"
                : ""
          }
-         this.navBArCategories[breakpointNumber].active = (breakpoints[breakpointNumber-1] < scrollPosition3)
+         this.navBArCategories[breakpointNumber].active = (breakpoints[breakpointNumber - 1] < scrollPosition3)
             ? "is-active"
             : ""
       }
