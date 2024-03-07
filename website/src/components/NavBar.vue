@@ -14,7 +14,7 @@
 export default {
    data() {
       return {
-         navBarPosition:[" relative "],
+         navBarPosition: [" relative "],
          navBArCategories: [
             { name: "Home", href: "#", style: ["h5", "titles", "title-options"], active: "" },
             { name: "About", href: "#about", style: ["h5", "titles", "title-options"], active: "" },
@@ -64,22 +64,24 @@ export default {
             ? ["top"]
             : ["relative"]
 
-         
+
       },
       handleScrollStyles() {
-         const breakpointNumber = 5
-         const breakpoints = [0, 900, 1300, 1700, 2100]
+         const breakpointNumber = 4
+         const breakpoints = [993, 2223, 3200, 3800]
          const scrollPosition3 = window.scrollY
 
-         this.navBArCategories[0].active = (scrollPosition3 < breakpoints[0])
+         console.log(scrollPosition3)
+
+         this.navBArCategories[0].active = (scrollPosition3 <= breakpoints[0])
             ? "is-active"
             : ""
-         for (let index = 0; index < breakpointNumber - 1; index++) {
-            this.navBArCategories[index].active = (breakpoints[index] <= scrollPosition3 && scrollPosition3 < breakpoints[index + 1])
+         for (let index = 1; index < breakpointNumber; index++) {
+            this.navBArCategories[index].active = (breakpoints[index -1] <= scrollPosition3 && scrollPosition3 < breakpoints[index])
                ? "is-active"
                : ""
          }
-         this.navBArCategories[breakpointNumber - 1].active = (breakpoints[breakpointNumber - 1] < scrollPosition3)
+         this.navBArCategories[breakpointNumber].active = (breakpoints[breakpointNumber-1] < scrollPosition3)
             ? "is-active"
             : ""
       }
@@ -133,5 +135,4 @@ i {
    position: relative;
    top: auto
 }
-
 </style>

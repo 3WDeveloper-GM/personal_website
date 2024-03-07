@@ -80,6 +80,7 @@ export default {
          const weight = 7
          this.angles.rotate = (scroller / weight)
 
+
          this.styleSetter = this.setRotation()
       },
       setRotation() {
